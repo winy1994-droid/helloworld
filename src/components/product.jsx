@@ -1,17 +1,58 @@
-import { Component } from "react";
+ import { Component } from "react";
 
 class Product extends Component{
-    render(){
-        return(
-            <>
-              <span>product name</span>
-              <span>2</span>
-              <button>+</button>
-              <button>-</button>
-              <button>Delete</button>
-            </>
-        )
-    }
-}
 
+  state={
+    count:this.props.count,
+    
+  }
+     
+    render(){
+        const {productName}=this.props
+        const {price}=this.props
+        return(
+   
+              <div>         
+              <span className=" badge m-2 text-info">{productName}</span>
+              <span className="badge m-2 text-info">{price}</span>
+              <span className="m-2 badge bg-primary">{this.format()}</span>
+              <button onClick={this.increase} className="m-2 btn btn-lg btn-success">+</button>
+              <button onClick={this.decrease} className="m-2 btn btn-lg btn-danger">-</button>
+              <button className="m-2 btn btn-lg btn-warning">X</button> 
+              <p>{this.props.children}</p>
+           </div>
+          
+          
+    
+           
+        )
+    } 
+ 
+
+  increase=()=>{
+     const {count}=this.state
+     this.setState({count:count + 1})
+  }
+
+  decrease=()=>{
+      const {count}=this.state
+      this.setState({count:count - 1})
+  }
+
+ 
+
+  format(){
+    if (this.state.count===0){
+      return "zero"
+   }
+   else{
+     return this.state.count
+   }
+  }
+   
+}
+ 
 export default Product
+
+
+
