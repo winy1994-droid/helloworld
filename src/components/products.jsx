@@ -16,9 +16,9 @@ class products extends Component {
     render(){
          return(
             <>
-               {this.state.products.map((p,index)=>(
-                 <Product key={index} count={p.count} productName={p.productName}   price={p.price}><p>Lorem ipsum dolor sit </p></Product>
-                ))}
+        {this.state.products.map((p,index)=>(
+          <Product key={index} count={p.count} productName={p.productName}  price={p.price}/>  
+        ))}
                       
             </>
          )

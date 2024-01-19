@@ -19,7 +19,6 @@ class Product extends Component{
               <button onClick={this.increase} className="m-2 btn btn-lg btn-success">+</button>
               <button onClick={this.decrease} className="m-2 btn btn-lg btn-danger">-</button>
               <button className="m-2 btn btn-lg btn-warning">X</button> 
-              <p>{this.props.children}</p>
            </div>
           
           

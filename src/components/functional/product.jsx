@@ -1,8 +1,8 @@
    
  import { useState } from "react"
 
-const Product=({productName})=>{
-        const [count,setCount]=useState(0);
+const Product=({productName,count:propCount})=>{
+        const [count,setCount]=useState(propCount);
         return(
 
             <div>         
